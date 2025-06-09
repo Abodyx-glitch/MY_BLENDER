@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملف أعمال ABODY_X</title>
+    <style>
+        /* --- الخطوط والألوان الأساسية --- */
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+        :root {
+            --background-color: #05020f; /* لون الخلفية الغامق */
+            --surface-color: #361892;   /* لون الأسطح والكروت */
+            --primary-color: #00e5ff;   /* لون مميز (أزرق سماوي) */
+            --text-color: #f0f0f0;      /* لون النص الأساسي */
+            --font-family: 'Cairo', sans-serif;
+        }
+
+        /* --- تصميم أساسي للجسم --- */
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            scroll-behavior: smooth; /* لجعل التنقل بين الأقسام سلساً */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px 0;
+        }
+
+        /* --- قسم الهيدر والتعريف الرئيسي --- */
+        header {
+            min-height: 100vh; /* ليأخذ كامل الشاشة */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(#361892, #05020f), url('https://source.unsplash.com/random/1600x900/?3d,abstract,dark') no-repeat center center/cover;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        header h1 span {
+            color: var(--primary-color);
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin: 10px 0 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            background-color: #0088cc;
+        }
+
+        /* --- تصميم الأقسام --- */
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+
+        /* --- قسم "من أنا؟" --- */
+        #about p {
+            font-size: 1.2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        /* --- قسم "لماذا تريد العمل معي؟" --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            text-align: center;
+        }
+
+        .feature-card {
+            background-color: var(--surface-color);
+            padding: 30px;
+            border-radius: 10px;
+            border-bottom: 3px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.8rem;
+            margin: 0 0 10px;
+        }
+
+        /* --- قسم أعمالي --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: var(--surface-color);
+            border-radius: 10px;
+            overflow: hidden; /* لإخفاء أي جزء من الصورة يتجاوز حدود الكرت */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 170, 255, 0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover; /* للحفاظ على أبعاد الصورة */
+            display: block;
+        }
+
+        .project-card h3 {
+            padding: 20px;
+            margin: 0;
+            color: var(--primary-color);
+        }
+
+        /* --- تذييل الموقع (Footer) --- */
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            background-color: var(--surface-color);
+        }
+        
+        /* --- تأثيرات ظهور الأقسام عند التمرير --- */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>أنا <span>ABODY_X</span></h1>
+        <p>مصمم ثلاثي الأبعاد متوسط المستوى باستخدام Blender</p>
+        <a href="#projects" class="cta-button">شاهد أعمالي</a>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">من أنا؟</h2>
+                <p>
+                    اسمي ABODY_X، عمري 18 سنة، وأمتلك مستوى متوسطًا في برنامج بلندر. شغوف بتعلم المزيد في هذا المجال الممتع وأسعى للتعمق فيه وتطوير مهاراتي باستمرار لإنشاء تصاميم مبتكرة.
+                </p>
+            </div>
+        </section>
+
+        <section id="why-me" style="background-color: #080645;">
+            <div class="container">
+                <h2 class="section-title">لماذا تعمل معي؟</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>1- محقق</h3>
+                        <p>أدقق في تفاصيل المشروع لأضمن خلوه من الأخطاء وتحقيق الرؤية المطلوبة.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>2- مركز</h3>
+                        <p>أصب كامل تركيزي على العمل لتحقيق أفضل النتائج بكفاءة عالية.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>3- شغّال</h3>
+                        <p>ملتزم وجاد في عملي، وأبحث دائمًا عن فرص لتطبيق مهاراتي وشغفي.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">بعض أعمالي</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="C:\Users\COM30\Desktop\Image_BLENDER\5836757407785665419_121.jpg" alt="صورة عمل في بلندر">
+                        <h3>مشروع تصميم مجرد</h3>
+                    </div>
+                    <div class="project-card">
+                        <img src="C:\Users\COM30\Desktop\Image_BLENDER\5836757407785665417_121.jpg" alt="صورة عمل في بلندر">
+                        <h3>مشروع تصميم منتج</h3>
+                    </div>
+                    <div class="project-card">
+                        <img src="C:\Users\COM30\Desktop\Image_BLENDER\5836757407785665415_121.jpg" alt="صورة عمل في بلندر">
+                        <h3>مشروع محاكاة طبيعة</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2025 - ABODY_X</p>
+    </footer>
+
+</body>
+</html>
